@@ -17,6 +17,26 @@ body {
 	font-size: 20px;
 }
 
+h3 { 
+color : red;
+}
+
 #listContent{
  padding: 15px
+}
+
+#formTitle {
+	font-size: 45px;
+	font-weight: bold;
+}
+
+.alert {
+	font-size : 15px;
+	color: red;
+	margin: 0px;
+}
+
+#alert {
+	font-size : 18px;
+	color: red;
 }

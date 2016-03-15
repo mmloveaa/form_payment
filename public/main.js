@@ -5,26 +5,15 @@ var app = angular.module('myApp', []);
 
 app.controller('mainCtrl' , function ($scope, $http) {
 
-	// $scope.user = {
-	// 	email: "",
-	// 	pw: "",
-	// 	pwconf: "",
-	// 	ccnum: "",
-	// 	cvv: "",
-	// 	postalcode: ""
-	// };
-
 	$scope.user = {}
-
-
 
 	$scope.reset = function(){
 		$scope.user = {};
 	}
 
 	$scope.submit = function() {
-		console.log('the form is valid and will be submitted')
-		console.log('submitted')
+		// console.log('the form is valid and will be submitted')
+		// console.log('submitted')
 		$http.post('/submit', $scope.newUser).then(function(response){
 			console.log(response.data)
 		})
@@ -63,7 +52,7 @@ app.controller('mainCtrl' , function ($scope, $http) {
 
 	$scope.validatePwconf = function(pwconf) {
 		if (pwconf === undefined) return 
-			
+
 		return pwconf === $scope.user.pw
 	}
 
@@ -74,9 +63,9 @@ app.controller('mainCtrl' , function ($scope, $http) {
 	}
 
 	$scope.validatePostal = function(postal) {
-		if (cvv === undefined) return
+		if (postal === undefined) return
 
-		return cvv.match(/\d(5)/)
+		return postal.match(/\d(5)/)
 	}
 
 

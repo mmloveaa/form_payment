@@ -14,34 +14,44 @@
 </head>
 
 <body ng-app='myApp' ng-controller='mainCtrl'>
-    <div>Register Here</div>
+    <center>
+         <div id="formTitle">Registration Form</div>
 
-    <form name="newUser" ng-submit="newUser.$valid && submit()" novalidate>
-        Email:
-        <input type="text" name="email" ng-model="user.email" valid-email required />
-        <br /> PW:
-        <input type="text" name="pw" ng-model="user.pw" required />
-        <br /> PW-Conf:
-        <input type="text" name="pwconf" ng-model="user.pwconf" valid-pwconf required />
-        <br /> CC-Num:
-        <input type="text" name="ccnum" ng-model="user.ccnum" valid-credit required />
-        <br /> CVV Code:
-        <input type="text" name="cvv" ng-model="user.cvv" valid-cvv required />
-        <br /> Postal Code:
-        <input type="text" name="postalcode" ng-model="user.postalcode" required />
-        <br />
-        <input type="button" ng-click="reset()" value="Reset" />
-        <input type="submit" ng-disabled="newUser.$invalid" value="Save" />
-    </form>
-    <!-- <pre>{{user}}</pre> -->
+         <h3> Warning : Do not use any real information </h3>
+    </center>
+    <br />
 
-    <div ng-hide="newUser.email.$valid">Email is not valid</div>
-    <div ng-hide="newUser.pw.$valid">Password is not entered</div>
-    <div ng-hide="newUser.pwconf.$valid">Password confirm is not entered</div>
-    <div ng-hide="newUser.ccnum.$valid">CC number is not valid</div>
-    <div ng-hide="newUser.cvv.$valid">cvv needs to be three digits</div>
-    <div ng-hide="newUser.postalcode.$valid">postalcode needs to be five digits</div>
-    <div ng-hide="newUser.$valid">You didn't enter all the fields</div>
+    <center>
+        <form name="newUser" ng-submit="newUser.$valid && submit()" novalidate>
+            Email:
+            <input type="text" name="email" ng-model="user.email" valid-email required />
+            <span class="alert" ng-hide="newUser.email.$valid">Email is not valid</span>
+            <br /> Password:
+            <input type="password" name="pw" ng-model="user.pw" required />
+            <span class="alert"  ng-hide="newUser.pw.$valid">Password is not entered</span>
+            <br /> Password Confirmation:
+            <input type="password" name="pwconf" ng-model="user.pwconf" valid-pwconf required />
+            <span class="alert"  ng-hide="newUser.pwconf.$valid">Password confirm is not entered</span>
+            <br /> Credit Card Number:
+            <input type="text" name="ccnum" ng-model="user.ccnum" valid-credit required />
+            <span class="alert"  ng-hide="newUser.ccnum.$valid">CC number is not valid</span>
+            <br /> CVV Code:
+            <input type="text" name="cvv" ng-model="user.cvv" valid-cvv required />
+            <span class="alert"  ng-hide="newUser.cvv.$valid">cvv needs to be three digits</span>
+            <br /> Postal Code:
+            <input type="text" name="postalcode" ng-model="user.postalcode" required />
+            <span class="alert"  ng-hide="newUser.postalcode.$valid">postalcode needs to be five digits</span>
+            <input type="button" ng-click="reset()" class="btn btn-danger" value="Reset" />
+            <input type="submit" ng-disabled="newUser.$invalid" class="btn btn-success" value="Save" />
+        </form>
+    </center>
+
+            <br />
+
+    <center>
+        <div id="alert" ng-hide="newUser.$valid">You didn't enter all the fields</div>
+    </center>
+        
 </body>
 
 </html>
