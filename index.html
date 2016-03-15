@@ -41,6 +41,8 @@
             <br /> Postal Code:
             <input type="text" name="postalcode" ng-model="user.postalcode" required />
             <span class="alert"  ng-hide="newUser.postalcode.$valid">postalcode needs to be five digits</span>
+            <br />
+            <br />
             <input type="button" ng-click="reset()" class="btn btn-danger" value="Reset" />
             <input type="submit" ng-disabled="newUser.$invalid" class="btn btn-success" value="Save" />
         </form>
