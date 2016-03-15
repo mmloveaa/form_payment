@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+
+<body ng-app='myApp' ng-controller='mainCtrl'>
+    <div>Register Here</div>
+
+    <form name="newUser" ng-submit="newUser.$valid && submit()" novalidate>
+        Email:
+        <input type="text" name="email" ng-model="user.email" valid-email required />
+        <br /> PW:
+        <input type="text" name="pw" ng-model="user.pw" required />
+        <br /> PW-Conf:
+        <input type="text" name="pwconf" ng-model="user.pwconf" valid-pwconf required />
+        <br /> CC-Num:
+        <input type="text" name="ccnum" ng-model="user.ccnum" valid-credit required />
+        <br /> CVV Code:
+        <input type="text" name="cvv" ng-model="user.cvv" valid-cvv required />
+        <br /> Postal Code:
+        <input type="text" name="postalcode" ng-model="user.postalcode" required />
+        <br />
+        <input type="button" ng-click="reset()" value="Reset" />
+        <input type="submit" ng-disabled="newUser.$invalid" value="Save" />
+    </form>
+    <!-- <pre>{{user}}</pre> -->
+
+    <div ng-hide="newUser.email.$valid">Email is not valid</div>
+    <div ng-hide="newUser.pw.$valid">Password is not entered</div>
+    <div ng-hide="newUser.pwconf.$valid">Password confirm is not entered</div>
+    <div ng-hide="newUser.ccnum.$valid">CC number is not valid</div>
+    <div ng-hide="newUser.cvv.$valid">cvv needs to be three digits</div>
+    <div ng-hide="newUser.postalcode.$valid">postalcode needs to be five digits</div>
+    <div ng-hide="newUser.$valid">You didn't enter all the fields</div>
+</body>
+
+</html>

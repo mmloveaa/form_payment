@@ -1,0 +1,22 @@
+#header {
+	background-color: #1a5ff4;
+	color: black;
+	padding: 10px;
+}
+
+h1 {
+	color: white;
+	font-size: 55px;
+	font-weight: bold;
+	padding: 25px;
+	font-family: 'Cabin', sans-serif;
+}
+
+body {
+	background-color: #cbf2ec;
+	font-size: 20px;
+}
+
+#listContent{
+ padding: 15px
+}
