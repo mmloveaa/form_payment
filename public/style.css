@@ -40,3 +40,7 @@ color : red;
 	font-size : 18px;
 	color: red;
 }
+
+.inputField {
+	margin: 3px;
+}
